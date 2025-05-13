@@ -2,19 +2,16 @@
  * TimeDelay.java
  */
 public class TimeDelay {
-//	Taken from online: https://www.baeldung.com/java-delay-code-execution
+	/**
+	 * The function/method called pauseTime() pauses the console screen. I used both: an AI and a website (see link provided), 
+	 * to help me with pausing the console. The programmer will determine how long the console will pause. Seconds are determined by
+	 * the programmer, and multiplied by 1000 to remove the milliseconds.
+	 * @see https://www.baeldung.com/java-delay-code-execution
+	 * @param secondDelay
+	 */
 	public void pauseTime(int secondDelay) {
-		//I used AI and a website to help me with pausing the console. I asked if I did anything wrong and it gave me 
-		//a suggestion. Idea from AI is to ensure a second delay isn't negative. However, it won't affect the program 
-		//by the user. The programmer will determine how long the console will pause.
 		if(secondDelay < 0) return;
-		
-//		System.out.println("pauseTime() will stop after " + secondDelay +" seconds.");
-		try {
-			Thread.sleep(secondDelay * 1000);
-		}catch(InterruptedException e) {
-			e.printStackTrace();
-		}
-//		System.out.println("pauseTime() resumed.");
+		try { Thread.sleep(secondDelay * 1000);}
+		catch(InterruptedException e) { e.printStackTrace(); }
 	}
 }

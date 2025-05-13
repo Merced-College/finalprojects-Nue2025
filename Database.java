@@ -7,7 +7,7 @@ public class Database {
 	private int recreationVisitors;
 	private String climate, description;
 	
-	//Constructor
+	//Constructor | The constructor sets them to unknown values because we haven't read them yet.
 	public Database() {
 		parkName = "Unknown";
 		stateName = "Unknown";
@@ -19,7 +19,17 @@ public class Database {
 		description = "Unknown";
 	}//End Database() constructor
 
-//NOT SURE what this does yet
+	/**
+	 * Constructs a Database object containing all information about a national park.
+	 * @param parkNameInput Name of the national park as a String parameter.
+	 * @param stateNameInput U.S. state(s) where the park is located as a String parameter.
+	 * @param coordinateLocationInput GPS coordinates of the park in decimal degrees as a String parameter.
+	 * @param dateEstablishedInput Date the park was officially established as a String parameter.
+	 * @param area2023Input Area of the park in 2023 (e.g., in acres or square miles) as a String parameter.
+	 * @param recreationVisitorsInput Number of recreational visitors the park had as an int parameter.
+	 * @param climateInput Climate type of the park (e.g., desert, alpine, coastal) as a String parameter.
+	 * @param descriptionInput Brief description of the park's features or significance as a String parameter.
+	 */
 	public Database(String parkNameInput, String stateNameInput, String coordinateLocationInput, String dateEstablishedInput,
 			String area2023Input, int recreationVisitorsInput, String climateInput, String descriptionInput) {
 		parkName = parkNameInput;
@@ -31,12 +41,12 @@ public class Database {
 		climate = climateInput;
 		description = descriptionInput;
 	}
-	
+
 	/**
 	 * This is the setter (mutator) section for the data being read, respectively to the variables names.
 	 * If the argument/parameter's variable name includes the word "Input", it means that this is the variable being passed 
-	 * in, all with respect to the park.
-	 * To make this class light, it is reduced to one line of code. It becomes tedious and there are ways to work easier.
+	 * in, all with respect to the park. To make this class light, it is reduced to one line of code. It becomes tedious 
+	 * and there are ways to read the code with ease. 
 	 * @param parkNameInput a String parameter is setting the park name.
 	 * @param stateNameInput a String parameter is setting the state name.
 	 * @param coordinateLocationInput a String parameter is setting the coordinate location (latitude and longitude) and other data with respect.
@@ -81,7 +91,7 @@ public class Database {
 	 * Needs override because Java doesn't know how to make this into a string. Java is considering/making it as 
 	 * generic object info. In doing this, we are showing we are doing it our own way. Otherwise, Java uses a 
 	 * default which incorporates an '@' symbol. 
-	 * USED AI in this section to explain how @Override works and why my information came out as addresses (GIBBERISH@NUMBERS)
+	 * USED AI in this section to explain how @Override works and why my information came out as addresses (GIBBERISH@NUMBERS).
 	 */
 	public String toString() {
 		return "Park name: " + parkName + ", State: " + stateName + ", Location: " + coordinateLocation
