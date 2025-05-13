@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DataHandler {
-
 	/**
 	 * Loads national park data from a CSV file and stores each row as a Database object in an ArrayList.
 	 * @param csvFileName a String representing the name or path of the CSV file to load park data from.
