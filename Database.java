@@ -91,7 +91,7 @@ public class Database {
 	 * Needs override because Java doesn't know how to make this into a string. Java is considering/making it as 
 	 * generic object info. In doing this, we are showing we are doing it our own way. Otherwise, Java uses a 
 	 * default which incorporates an '@' symbol. 
-	 * USED AI in this section to explain how @Override works and why my information came out as addresses (GIBBERISH@NUMBERS).
+	 * AI assisted in this section to explain how @Override works and why my information came out as addresses (GIBBERISH@NUMBERS).
 	 */
 	public String toString() {
 		return "Park name: " + parkName + ", State: " + stateName + ", Location: " + coordinateLocation

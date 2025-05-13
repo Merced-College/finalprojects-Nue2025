@@ -20,6 +20,19 @@ public class Center {
 	 */
 	public static void main(String[] args) throws IOException {		
 		Scanner scnr = new Scanner(System.in); //Reads in user input.
+        /**********************************************************************************************************************
+		* Title: National Park List
+		* Author: Jacob Stopak
+		* Date: March 26, 2025
+		* Code version: 1.0
+		* Availability: https://www.downloadexcelfiles.com/us_en/download-excel-file-list-national-parks-us
+		* 
+		* Title: National Park List of Names and Descriptions (Edited from Jacob Stopak)
+		* Author: Nue Lopez
+		* Date: May 1, 2025
+		* Code version: 3.0
+		* Availability: https://docs.google.com/spreadsheets/d/1ziaFXhW1AH9-fRpfj2ejbEoWEulhMTGtHpQ8wXPhLpQ/edit?usp=sharing
+		*********************************************************************************************************************/
 		ArrayList<Database> parkList1 = DataHandler.loadDataFromFile("nationalParkList04232025.tsv"); //Loads the file from the folder.
 		ParkSearch park1 = new ParkSearch(); //This creates a new ParkSearch class, which will be used later on. 
 		TimeDelay time1 = new TimeDelay(); //Time Delay is created to slow down how much information is output to the console.

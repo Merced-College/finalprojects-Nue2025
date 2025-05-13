@@ -9,6 +9,15 @@ public class TimeDelay {
 	 * @see https://www.baeldung.com/java-delay-code-execution
 	 * @param secondDelay
 	 */
+	
+	/*******************************************************************
+	* Title: How to Delay Code Execution in Java
+	* Author: Jacob Stopak
+	* Date: March 26, 2025
+	* Code version: 1.0
+	* Availability: https://www.baeldung.com/java-delay-code-execution
+	*
+	*******************************************************************/
 	public void pauseTime(int secondDelay) {
 		if(secondDelay < 0) return;
 		try { Thread.sleep(secondDelay * 1000);}
