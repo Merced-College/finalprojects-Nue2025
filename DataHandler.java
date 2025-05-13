@@ -1,17 +1,23 @@
+/**
+ * DataHandler.java
+ */
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class DataHandler {
-	
-	public static ArrayList<Database> loadDataFromFile(String csvFileName) { //We will have to return something along the lines of an ArrayList
+
+	public static ArrayList<Database> loadDataFromFile(String csvFileName) { //We will have to return something 
+		//																		along the lines of an ArrayList
 		ArrayList<Database> parkList = new ArrayList<>();
-		
-		try (FileInputStream fis = new FileInputStream(csvFileName); 
-			Scanner scnr = new Scanner(fis)) {
+		try {
+//		GitHub acts weird; they want the FileInputStream on the same line as "try{". 
+//			Check the GitHub link for more questions.
+			FileInputStream fis = new FileInputStream(csvFileName);
+			Scanner scnr = new Scanner(fis);
 			
-			scnr.nextLine(); //This reads the first line because the header row is something we do not need
+			scnr.nextLine(); //This reads the first line because the header row is something we do not need.
 			
 			while (scnr.hasNextLine()) {
 			    String line = scnr.nextLine();
@@ -31,22 +37,23 @@ public class DataHandler {
 				try {
                     visitors = Integer.parseInt(parts[5].trim().replaceAll("[^\\d]", "")); 
 //                    Used AI to help me understand how to separate the parts. It was difficult to figure out how to 
-//                    trimp them.
+//                    trim them.
 				} catch (NumberFormatException e) {}// If parsing fails, visitors stays as 0
 
 				String climate = parts[6].trim();
 				String description = parts[7].trim();
 				
+				//Sets a park Database class to the line read.
 				Database park = new Database(parkName, stateName, coordinates, dateEstablished, area, visitors, climate, description);
 				parkList.add(park);
 			}
 			scnr.close();
 			fis.close();
 		}
-		catch (IOException e) {
+		catch (IOException e) { //If the file does not exist, it will print out an error message.
 			System.out.println("Error with loading file: " + e.getMessage());
 		}
 		    
-		return parkList;//End try
-	}
+		return parkList;
+	}//End loadDataFromFile().
 }
