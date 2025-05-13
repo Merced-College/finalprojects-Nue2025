@@ -153,16 +153,16 @@ public class Center {
 					}
 					else if ((respondForData.toLowerCase()).contains("coordinate") || (respondForData.toLowerCase()).contains("direction")) {
 						System.out.println("Coordinate (in Latitude and Longitude): " + database1.getCoordinateLocation());
-						System.out.println("Do you know what Latitude and Longitude mean? Yes/No");
+						System.out.println("\tDo you know what Latitude and Longitude mean? Yes/No");
 						String respondForDirectionInfo = scnr.nextLine();
 						if (respondForDirectionInfo.toLowerCase().contains("yes") || respondForDirectionInfo.toLowerCase().contains("ya") || 
 								respondForDirectionInfo.toLowerCase().contains("ye") || respondForDirectionInfo.toLowerCase().contains("yeah")) {
 							//Nothing happens.
 						}
 						else { //Used AI to ensure the meaning is here:
-							System.out.println("1. Degrees and minutes with cardinal directions (e.g., N, S, E, W).");
-							System.out.println("2. Decimal degrees with cardinal directions.");
-							System.out.println("3. Pure decimal degrees to precisely locate the park.");
+							System.out.println("\t1. Degrees and minutes with cardinal directions (e.g., N, S, E, W).");
+							System.out.println("\t2. Decimal degrees with cardinal directions.");
+							System.out.println("\t3. Pure decimal degrees to precisely locate the park.");
 						}
 					}//End else-if statement.
 					else if ((respondForData.toLowerCase()).contains("date") || (respondForData.toLowerCase()).contains("creat") || (respondForData.toLowerCase()).contains("establish")) { System.out.println("Date Established: " + database1.getDateEstablished()); }
@@ -175,7 +175,7 @@ public class Center {
 					}
 				}else if ((respondForInfo.toLowerCase()).contains("no") || (respondForInfo.toLowerCase()).contains("nah")){ 
 					action1=true; 
-					System.out.println("--------------------------------------------------------------------------------");
+					System.out.println("--------------------------------------------------------------------------");
 
 					} //Leaves if the user doesn't want info.
 				else { System.out.println("Invalid Response. Try again..."); }//End if/else statements with the else{.
@@ -193,7 +193,7 @@ public class Center {
 	 * @param time1 TimeDelay object to manage pause timing between messages.
 	 */
 	public static void searchState(Scanner scnr, ArrayList<Database> parkList1, TimeDelay time1) {
-        System.out.println("------------------------------------------------------------------"); 
+		System.out.println("--------------------------------------------------------------------------");
 
         System.out.print("Welcome to the State search! ");	//Similar to parkSearch(). 
 		System.out.print("What state are you looking for? ");
